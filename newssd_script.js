@@ -10,8 +10,9 @@ window.addEventListener('load', startTime);
 
 
 // --- Accordion for Course Policy Section ---
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const policyTitles = document.querySelectorAll('.policy-title');
+    console.log(policyTitles);
 
     policyTitles.forEach(title => {
         // Hide content by default
@@ -20,15 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         title.addEventListener('click', () => {
             const content = title.nextElementSibling;
-            
+
             // Toggle the 'active' class on the content
             content.classList.toggle('active');
 
             // Also toggle an 'active' state on the title for styling (e.g., arrow rotation)
-            title.classList.toggle('active'); 
-            
+            title.classList.toggle('active');
+
             // This is the main logic for opening/closing
-            if (content.style.maxHeight && content.style.maxHeight !== "0px"){
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
                 content.style.maxHeight = 0;
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
